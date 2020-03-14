@@ -1,3 +1,4 @@
+const fetch = require("node-fetch");
 /**
  * Return the fetched object from the request
  *
@@ -5,7 +6,7 @@
  * @param {Object} options The object used for the request. Use FetchOptions or create a similar object
  * @returns {Object}
  */
-module.exports = async function(url = "", options = {}){
+async function fetchWrapper(url = "", options = {}) {
     //Headers par défaut
     let headers = {
         "Content-Type": "application/json"
@@ -32,3 +33,5 @@ module.exports = async function(url = "", options = {}){
 
     return await response.json();
 };
+
+module.exports = fetchWrapper;
