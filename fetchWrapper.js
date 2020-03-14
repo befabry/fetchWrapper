@@ -28,7 +28,7 @@ async function fetchWrapper(url = "", options = {}) {
     let response = await fetch(url, {
         method: options.method,
         headers,
-        body: options.params
+        body: JSON.stringify(options.params)
     });
 
     return await response.json();
