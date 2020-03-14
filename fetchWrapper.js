@@ -5,7 +5,7 @@
  * @param {Object} options The object used for the request. Use FetchOptions or create a similar object
  * @returns {Object}
  */
-export default async (url = "", options = {}) => {
+module.export.fetchWrapper = async (url = "", options = {}) => {
     //Headers par défaut
     let headers = {
         "Content-Type": "application/json"

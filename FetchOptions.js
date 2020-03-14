@@ -23,4 +23,4 @@ class FetchOptions {
     }
 }
 
-export default Options;
+module.exports.FetchOptions = FetchOptions;
