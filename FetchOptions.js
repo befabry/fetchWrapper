@@ -5,7 +5,7 @@
  * @param {Object} headers The headers
  * @param {string} method The method
  */
-class FetchOptions {
+module.exports = class FetchOptions {
     constructor(params, method = "GET", headers = {}) {
         if (!this.supportedMethods.includes(method)) {
             throw new Error(
@@ -22,5 +22,3 @@ class FetchOptions {
         return ["GET", "POST", "PUT", "DELETE"];
     }
 }
-
-module.exports.FetchOptions = FetchOptions;
