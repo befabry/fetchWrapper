@@ -1,0 +1,10 @@
+{
+  "name": "fetchWrapper",
+  "version": "1.0.0",
+  "description": "A simple Wrapper for the fetch function",
+  "main": "fetchWrapper.js",
+  "repository": "https://github.com/befabry/fetchWrapper.git",
+  "author": "befabry <fabrybenjamin5@gmail.com>",
+  "license": "none",
+  "private": false
+}
