@@ -5,6 +5,17 @@
   "main": "fetchWrapper.js",
   "repository": "https://github.com/befabry/fetchWrapper.git",
   "author": "befabry <fabrybenjamin5@gmail.com>",
-  "license": "none",
-  "private": false
+  "license": "",
+  "private": false,
+  "type": "module",
+  "exports": {
+    "./fetchWrapper": {
+      "require": "./src/fetchWrapper_require.js",
+      "import": "./src/fetchWrapper_import.js"
+    },
+    "./FetchOptions": {
+      "require": "./src/FetchOptions.js",
+      "import": "./src/FetchOptions_import.js"
+    }
+  }
 }

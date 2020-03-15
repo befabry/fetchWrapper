@@ -1,4 +1,6 @@
+//this fetchWrapper function is a copy of fetchWrapper, required for node-fetch.
 const fetch = require("node-fetch");
+
 /**
  * Return the fetched object from the request
  *
@@ -7,6 +9,8 @@ const fetch = require("node-fetch");
  * @returns {Object}
  */
 async function fetchWrapper(url = "", options = {}) {
+    console.log("src/fetchWrapper");
+
     //Headers par défaut
     let headers = {
         "Content-Type": "application/json"
@@ -16,6 +20,8 @@ async function fetchWrapper(url = "", options = {}) {
         headers = { ...headers, ...options.headers };
         delete options.headers;
     }
+
+    let credentials = null === options.credentials ? "same-origin" : options.credentials;
 
     //fetch does not support params. Concatenated in the URL
     if ("GET" === options.method) {
@@ -28,6 +34,7 @@ async function fetchWrapper(url = "", options = {}) {
     let response = await fetch(url, {
         method: options.method,
         headers,
+        credentials,
         body: JSON.stringify(options.params)
     });
 
