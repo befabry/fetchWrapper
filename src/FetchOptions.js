@@ -12,7 +12,6 @@ class FetchOptions {
                 "Must be of type ${this.supportedMethods.toString()}"
             );
         }
-        console.log("src/FetchOptions");
 
         this.params = params;
         this.method = method;

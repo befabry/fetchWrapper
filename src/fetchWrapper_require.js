@@ -9,9 +9,7 @@ const fetch = require("node-fetch");
  * @returns {Object}
  */
 async function fetchWrapper(url = "", options = {}) {
-    console.log("src/fetchWrapper");
-
-    //Headers par défaut
+    //Default headers
     let headers = {
         "Content-Type": "application/json"
     };
@@ -21,6 +19,7 @@ async function fetchWrapper(url = "", options = {}) {
         delete options.headers;
     }
 
+    //default credentials
     let credentials = null === options.credentials ? "same-origin" : options.credentials;
 
     //fetch does not support params. Concatenated in the URL
