@@ -22,6 +22,6 @@ class FetchOptions {
     get supportedMethods() {
         return ["GET", "POST", "PUT", "DELETE"];
     }
-};
+}
 
 module.exports = FetchOptions;

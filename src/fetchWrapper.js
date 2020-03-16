@@ -1,3 +1,18 @@
+let fetch = isNode() ? require("node-fetch") : globalThis.fetch;
+
+/**
+ * Check if it run under node js
+ *
+ * @returns {Boolean}
+ */
+function isNode() {
+    return (
+        typeof process !== "undefined" &&
+        process.release &&
+        process.release.name === "node"
+    );
+}
+
 /**
  * Return the fetched object from the request
  *
@@ -17,7 +32,8 @@ async function fetchWrapper(url = "", options = {}) {
     }
 
     //default credentials
-    let credentials = null === options.credentials ? "same-origin" : options.credentials;
+    let credentials =
+        null === options.credentials ? "same-origin" : options.credentials;
 
     //fetch does not support params. Concatenated in the URL
     if ("GET" === options.method) {
@@ -35,6 +51,6 @@ async function fetchWrapper(url = "", options = {}) {
     });
 
     return await response.json();
-};
+}
 
 module.exports = fetchWrapper;
