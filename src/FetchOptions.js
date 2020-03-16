@@ -4,12 +4,13 @@
  * @param {Object} params The parameters
  * @param {Object} headers The headers
  * @param {string} method The method
+ * @param {string} credentials The credentials
  */
 class FetchOptions {
     constructor(params, method = "GET", headers = {}, credentials = null) {
         if (!this.supportedMethods.includes(method)) {
             throw new Error(
-                "Must be of type ${this.supportedMethods.toString()}"
+                `Argument "method" must equal to one of the following options : ${this.supportedMethods.toString()}`
             );
         }
 
